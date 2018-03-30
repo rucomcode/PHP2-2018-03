@@ -2,5 +2,10 @@
 
 require __DIR__ . '/autoload.php';
 
-$data = \App\Models\Article::findAll();
-var_dump($data);
+$view = new \App\View();
+
+$view->articles = \App\Models\Article::findAll();
+$view['foo'] = 'bar';
+$view['baz'] = 42;
+
+echo $view->render(__DIR__ . '/templates/index.php');
