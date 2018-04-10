@@ -16,7 +16,11 @@
 
     <?php foreach ($this->articles as $article) : ?>
         <article>
-            <h2><?php echo $article->title; ?></h2>
+            <h2>
+                <a href="/article/?id=<?php echo $article->id; ?>">
+                    <?php echo $article->title; ?>
+                </a>
+            </h2>
             <p><?php echo $article->content; ?></p>
         </article>
 
